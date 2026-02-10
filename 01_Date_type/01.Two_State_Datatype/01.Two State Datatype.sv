@@ -1,35 +1,24 @@
-module variable_4_state;
-  reg a;
-  wire b;
-  logic c;
-  integer d;
-  real e;
-  time f;
-  
+module two_state_datatypes;
+
+  bit [3:0]   a;
+  byte        b;
+  shortint    c;
+  int         d;
+  longint     e;
+
   initial begin
-    
-    $display("Defalt value of reg = %b",a);
-    $display("Defalt value of wire = %b",b);
-    $display("Defalt value of logic = %b",c);
-    $display("Defalt value of integer = %b",d);
-    $display("Defalt value of real = %0f",e);
-    $display("Defalt value of time = %0t",f);
-    
-#18;
-    
-    a = 1'b1;
-    c = 1'b0;
-    d = 1234;
-    e = 07.77;
-    f = $time;
-    
-    $display("Initialized value of reg = %b",a);
-    $display("Initialized value of wire = %b",b);
-    $display("Initialized value of logic = %b",c);
-    $display("Initialized value of integer = %od(%b)",d,d);
-    $display("Initialized value of real = %.7f(%b)",e,e);
-    $display("Initialized value of time = %t",f);
-    
-  end 
+    a = 4'b1001;
+    b = 8'b10110100;
+    c = 16'd98;
+    d = 32'd245;
+    e = 64'd520;
+
+    $display("Two state data types");
+    $display("bit,       a = %0b ", a);
+    $display("byte,      b = %0d ", b);
+    $display("shortint,  c = %0d ", c);
+    $display("int,       d = %0d ", d);
+    $display("longint,   e = %0d ", e);
+  end
 
 endmodule
