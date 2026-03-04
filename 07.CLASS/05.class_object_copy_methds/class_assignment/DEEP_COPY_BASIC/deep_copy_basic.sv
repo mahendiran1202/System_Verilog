@@ -1,6 +1,5 @@
 class packet;
   int a;
-  
   function packet copy();
     packet p;
     p = new();
